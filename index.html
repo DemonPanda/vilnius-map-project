@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Neighborhood Map Project" content="Map of Vilnius(LTU)">
+    <title>Vilnius Map Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Chango" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <main class="col p-0 navbar-inverse">
+                <a href class="float-right m-3 navbar-light" data-target="#sidebar" data-toggle="collapse">
+                    <span><img src="img/vilnius.png" alt="Vilnius mark"></span>
+                </a>
+                <div class="content">
+                    <div id="map">
+                      <p class="map_error"></p>
+                    </div>
+                </div>
+            </main>
+            <nav class="col-2 collapse pt-2 h-100 sidebar_width" id="sidebar">
+                <h4 class="app_title">Vilnius Old Town</h4>
+                <input class="search" data-bind="textInput: searchOption, valueUpdate: 'afterkeydown'" placeholder="Filter Locations...">
+                <hr class="sidebar_hr">
+                <ul class="nav flex-column" data-bind="foreach: myLocationsFilter">
+                    <a href="#"><li class="nav-item location_list" data-bind="text: title, click: $parent.populateAndBounceMarker"></li></a>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <script src="js/knockout-3.4.2.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/markers.js" charset="utf-8"></script>
+    <script src="js/styles.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <script src="js/manipulation.js" charset="utf-8"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCzljpyjlb7QQTT9pFDmQZyBocTax4vVcA&callback=startApp" onerror="googleError()"></script>
+</body>
+</html>
